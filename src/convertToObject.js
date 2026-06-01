@@ -6,7 +6,7 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const result = {};
+  const stylesObject = {};
 
   const lines = sourceString.split(';');
 
@@ -17,10 +17,10 @@ function convertToObject(sourceString) {
   const keyValues = filtered.map((line) => line.split(':', 2));
 
   keyValues.forEach(([key, value]) => {
-    result[key.trim()] = value.trim();
+    stylesObject[key.trim()] = value.trim();
   });
 
-  return result;
+  return stylesObject;
 }
 
 module.exports = convertToObject;
